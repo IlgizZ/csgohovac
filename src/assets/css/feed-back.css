@@ -1,0 +1,35 @@
+#feed-back {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #fff;
+    background: -moz-linear-gradient(top, #323638 0%, #232626 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #323638 0%, #232626 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #323638 0%, #232626 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    overflow: hidden;
+}
+
+#feed-back .input-group {
+    margin-top: 10px;
+}
+
+#feed-back textarea {
+    margin-top: 10px;
+    resize: none;
+    height: 150px;
+}
+
+#feed-back .btn {
+    background: #257ca7;
+    margin-top: 10px;
+}
+
+#feed-back .btn:hover {
+    color: #fff;
+    background: #216d93;
+}
+
+@media (max-width: 767px) {
+    #feed-back {
+    }
+}

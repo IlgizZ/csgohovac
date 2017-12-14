@@ -1,0 +1,12 @@
+.boxHidded{
+    visibility: hidden;
+}
+.fadeIn,
+.fadeInLeft,
+.slideInRight,
+.slideInLeft,
+.fadeInRight,
+.slideInUp,
+.slideInDown{
+    visibility: visible;
+}

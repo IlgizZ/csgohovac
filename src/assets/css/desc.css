@@ -1,0 +1,123 @@
+#desccription {
+    position: relative;
+    width: 100%;
+    bottom: 0px;
+}
+
+#desccription #window {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 1170px;
+    bottom: -280px;
+    background: #fff;
+    z-index: 4;
+    overflow: hidden;
+    padding-bottom: 30px;
+
+}
+
+#desccription #window #top-panel {
+    width: 100%;
+    position: relative;
+    height: 30px;
+    padding-left: 20px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#323638+0,232626+99 */
+    background: #323638; /* Old browsers */
+    background: -moz-linear-gradient(top, #323638 0%, #232626 99%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #323638 0%, #232626 99%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #323638 0%, #232626 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#323638', endColorstr='#232626', GradientType=0); /* IE6-9 */
+}
+
+#desccription #window #top-panel .top-btn {
+    width: 15px;
+    height: 15px;
+    margin-top: 7px;
+    display: inline-block;
+    margin-left: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+#desccription #window #window-content {
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-top: 40px;
+    padding-right: 20px;
+    text-align: justify;
+    font-size: 20px;
+}
+
+#desccription #window #plus .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+}
+
+#desccription #window #plus .item #top {
+    margin-bottom: 10px;
+}
+
+#desccription #window #plus .item {
+    padding-left: 10px;
+    min-height: 170px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#desccription #window #plus .item #top {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+#desccription #window #plus .item #text {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 1.375;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #desccription #window {
+        bottom: -490px;
+        max-width: 750px;
+    }
+
+    #desccription #window #plus .item {
+        min-height: 110px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #desccription #window {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 767px) {
+    #desccription #window {
+        width: 100%;
+        position: relative;
+        margin: 0;
+        bottom: 0;
+    }
+
+    #desccription #window #plus .item {
+        min-height: 130px;
+    }
+
+    #desccription #window #top-panel .top-btn:nth-child(1) {
+        background-color: #d34147;
+    }
+
+    #desccription #window #top-panel .top-btn:nth-child(2) {
+        background-color: #e0e000;
+    }
+
+    #desccription #window #top-panel .top-btn:nth-child(3) {
+        background-color: #54a557;
+    }
+}

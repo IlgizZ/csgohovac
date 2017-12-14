@@ -1,0 +1,124 @@
+html,
+body {
+    font-family: 'Exo 2', serif !important;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body div[data-reactroot],
+body .bodyClass,
+body #app {
+  position: relative;
+  width: 100%;
+  height: 100%
+}
+
+section {
+    position: relative;
+}
+
+header {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+}
+
+header .block {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 100;
+    display: inline-block;
+    width: 19%;
+}
+
+
+
+header .block span {
+    font-size: 20px;
+}
+
+
+header .block span {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+header.start .block span:after {
+    background-color: #3498DB;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    left: 50%;
+    top: 10px;
+    position: relative;
+    -webkit-transition: width .1s ease-in-out;
+    -moz--transition: width .1s ease-in-out;
+    transition: width .1s ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+header.start .block span:hover:after,
+header.start .block span:focus:after {
+    width: 50%;
+}
+
+#top-section {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#top-section #particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1;
+}
+
+#top-section #text {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    text-align: center;
+}
+
+#top-section #text h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 100px;
+    font-weight: 100;
+}
+
+#top-section #text small {
+    clear: both;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+    #top-section #text h2 {
+        font-size: 48px;
+    }
+
+    #top-section #text small {
+        font-size: 14px;
+    }
+
+    header .block {
+        width: 17%;
+    }
+
+}
