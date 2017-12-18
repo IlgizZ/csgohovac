@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Quiz from '../components/quiz.js'
-import { changeAnswer, answer, init } from '../actions/quiz_actions.js'
+import Quiz from '../../components/quiz/quiz.js'
+import { changeAnswer, answer, init } from '../../actions/quiz/quiz_actions.js'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 

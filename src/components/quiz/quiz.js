@@ -1,23 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import '../assets/quiz.css'
+import '../../assets/quiz.css'
 
 class Quiz extends Component {
   componentDidMount () {
-    var canvasDiv = document.getElementById('particle-canvas')
-    var options = {
-      particleColor: '#888',
-      interactive: true,
-      speed: 'medium',
-      density: 'high',
-      background: "/assets/img/bg.png"
-    }
-    var particleCanvas = new ParticleNetwork(canvasDiv, options)
+
   }
 
   render () {
     let { question, answers, currentAnswer, changeAnswer, answer, successor } = this.props
     var answersTags = null
+
     if (successor) {
       answersTags = <textarea className='form-control textareaa' rows='10' cols='45' name='text' value={currentAnswer} onChange={(event) => { changeAnswer(event.target.value, successor) }} />
     } else {
@@ -57,7 +50,6 @@ class Quiz extends Component {
 
 Quiz.propTypes = {
   question: PropTypes.string.isRequired,
-  currentAnswer: PropTypes.string.isRequired,
   changeAnswer: PropTypes.func.isRequired,
   answer: PropTypes.func.isRequired
 }

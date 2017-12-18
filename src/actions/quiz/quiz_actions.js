@@ -1,9 +1,8 @@
-var C = require('../constants/quiz_constants.js')
 import { push } from 'react-router-redux'
 import * as firebase from 'firebase'
+var C = require('../../constants/quiz_constants.js')
 
 export function changeAnswer (currentAnswer, successor) {
-  console.log(currentAnswer)
   return {
     type: C.CHANGE_ANSWER,
     currentAnswer,

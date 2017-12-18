@@ -9,17 +9,14 @@ class Root extends Component {
     const routes = configureRoutes()
     const { store, history } = this.props
     return (
-      <div className='bodyClass'>
-        <Provider store={store}>
-          <ConnectedRouter history={history}>
-            {routes}
-          </ConnectedRouter>
-        </Provider>
-      </div>
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          {routes}
+        </ConnectedRouter>
+      </Provider>
     )
   }
 }
-// https://raw.githubusercontent.com/JulianLaval/canvas-particle-network/master/img/demo-bg.jpg
 Root.propTypes = {
   store: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired
