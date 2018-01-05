@@ -16,7 +16,10 @@ function configureStoreProd (initialState) {
     reactRouterMiddleware
   ]
 
-  return createStore(rootReducer, initialState, compose(applyMiddleware(...middlewares))
+  return createStore(
+    rootReducer,
+    initialState,
+    compose(applyMiddleware(...middlewares))
   )
 }
 

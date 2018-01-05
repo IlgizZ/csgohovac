@@ -29,7 +29,7 @@ class Auth extends Component {
     const queryString = require('query-string')
     const params = queryString.parse(this.props.location.search)
     const token = params.token
-    if (!token)  
+    if (!token)
       return
 
     this.setState({
@@ -53,7 +53,7 @@ class Auth extends Component {
     switch (this.state.loadingState) {
       case 'NOT':
         return (
-          <a href='http://localhost:5000/cs-gohavoc/us-central1/auth/steam'> log in via steam </a>
+          <a href='http://localhost:5000/cs-gohavoc/us-central1/auth/steam?ref=uid1'> log in via steam </a>
         )
       case 'Loged':
         return (

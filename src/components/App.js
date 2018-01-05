@@ -9,7 +9,9 @@ export default class App extends Component {
           Hello world!
         </h1>
         <Link to="/developer_test">Go to quiz</Link>
-        <Link to="/auth">Go to Authentication</Link>
+        <div>
+          <Link to="/auth">Go to Authentication</Link>
+        </div>
       </div>
     )
   }

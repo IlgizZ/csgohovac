@@ -4,6 +4,7 @@ import Root from './components/Root'
 import { AppContainer } from 'react-hot-loader'
 import configureStore, { history } from './store/configureStore'
 import * as firebase from 'firebase'
+import { startListeningToAuth } from './actions/auth/auth_actions'
 
 var config = {
   apiKey: 'AIzaSyAUdnQxVMicvu2SgA50Mm0hF_yasmwvFdk',
@@ -16,6 +17,7 @@ var config = {
 firebase.initializeApp(config)
 
 const store = configureStore()
+store.dispatch(startListeningToAuth())
 
 ReactDOM.render(
   <AppContainer>
