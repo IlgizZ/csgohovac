@@ -1,4 +1,5 @@
 import * as firebase from 'firebase'
+import { push } from 'react-router-redux'
 let C = require('../../constants/auth.js')
 
 export function startListeningToAuth () {
@@ -9,8 +10,10 @@ export function startListeningToAuth () {
       console.log(user)
       if (user) {
         dispatch({type: C.SIGN_IN, user})
+        dispatch(push('/'))
       } else {
         dispatch({type: C.LOGOUT})
+        dispatch(push('/'))
       }
     })
   }

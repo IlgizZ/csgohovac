@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import * as firebase from 'firebase'
 
 class Auth extends Component {
@@ -8,21 +7,6 @@ class Auth extends Component {
     this.state = {
       loadingState: 'NOT'
     }
-    this.signOut = this.signOut.bind(this)
-  }
-
-  signOut () {
-    this.setState({
-      loadingState: 'LOADING'
-    })
-    firebase.auth().signOut().then(() => {
-      this.setState({
-        loadingState: 'NOT'
-      })
-    }).catch(error => {
-      console.log(error)
-      this.setState({loadingState: 'Error'})
-    })
   }
 
   componentWillMount () {
@@ -39,8 +23,7 @@ class Auth extends Component {
     firebase.auth().signInWithCustomToken(token)
       .then(user => {
         this.setState({
-          loadingState: 'Loged',
-          username: user.displayName
+          loadingState: 'Loged'
         })
       })
       .catch(error => {
@@ -51,31 +34,16 @@ class Auth extends Component {
 
   render () {
     switch (this.state.loadingState) {
-      case 'NOT':
+      case 'LOADING':
         return (
-          <a href='http://localhost:5000/cs-gohavoc/us-central1/auth/steam?ref=uid1'> log in via steam </a>
-        )
-      case 'Loged':
-        return (
-          <div>
-            <p> Hello! {this.state.username} </p>
-            <p onClick={this.signOut}> Log out! </p>
-          </div>
-        )
-      case 'Error':
-        return (
-          <p>Error!</p>
+          <p>LOADING ...</p>
         )
       default:
         return (
-          <p>LOADING...</p>
+          <p>ERROR!</p>
         )
     }
   }
-}
-
-Auth.propTypes = {
-
 }
 
 export default Auth
