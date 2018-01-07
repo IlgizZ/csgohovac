@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import * as firebase from 'firebase'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 
 class Auth extends Component {
   constructor (props) {
@@ -13,8 +15,11 @@ class Auth extends Component {
     const queryString = require('query-string')
     const params = queryString.parse(this.props.location.search)
     const token = params.token
-    if (!token)
+
+    if (!token) {
+      this.props.push('/')
       return
+    }
 
     this.setState({
       loadingState: 'LOADING'
@@ -46,4 +51,4 @@ class Auth extends Component {
   }
 }
 
-export default Auth
+export default connect(null, { push })(Auth)
