@@ -15,7 +15,6 @@ class Auth extends Component {
     const queryString = require('query-string')
     const params = queryString.parse(this.props.location.search)
     const token = params.token
-
     if (!token) {
       this.props.push('/')
       return

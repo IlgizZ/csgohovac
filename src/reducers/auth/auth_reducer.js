@@ -12,7 +12,8 @@ module.exports = function (currentstate = initialState, action) {
         ...currentstate,
         status: C.SIGNED_IN,
         photoURL: action.user.photoURL,
-        displayName: action.user.displayName
+        displayName: action.user.displayName,
+        uid: action.user.uid
       }
     case C.LOGOUT:
       return {
