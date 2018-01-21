@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ProfileComponent from '../../components/profile/profile_component'
-import {initProfile} from '../../actions/profile/profile_actions'
+import { initProfile, changeTradeLink } from '../../actions/profile/profile_actions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -16,9 +16,6 @@ class ProfileContainer extends Component {
   }
 
   checkUserState () {
-    console.log(this.props.user.status)
-    console.log(this.props.profile.status)
-
     if (this.props.profile.status === PROFILE.LOADED)
       return
     switch (this.props.user.status) {
@@ -47,7 +44,7 @@ class ProfileContainer extends Component {
       return <p>LOADING ... </p>
     var { steamid, balance, wager, tradeLink } = this.props.profile
     return (
-      <ProfileComponent wager={wager} balance={balance} steamid={steamid} tradeLink={tradeLink} />
+      <ProfileComponent wager={wager} submit={this.props.changeTradeLink} balance={balance} steamid={steamid} tradeLink={tradeLink} />
     )
   }
 }
@@ -71,6 +68,7 @@ function mapDispatchToProps (dispatch) {
   return bindActionCreators(
     {
       initProfile: initProfile,
+      changeTradeLink: changeTradeLink,
       push: push
     },
     dispatch

@@ -3,5 +3,6 @@ module.exports = {
   NOT_LOADED: 'NOT_LOADED',
   LOADED: 'LOADED',
   // actions
-  INIT: 'INIT'
+  INIT: 'INIT',
+  UPDATE_LINK: 'UPDATE_LINK'
 }

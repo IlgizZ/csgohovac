@@ -12,6 +12,12 @@ module.exports = function (currentstate = initialState, action) {
         balance: action.balance,
         status: C.LOADED
       }
+    case C.UPDATE_LINK:
+      return {
+        ...currentstate,
+        tradeLink: action.tradeLink
+      }
+
     default:
       return currentstate
   }

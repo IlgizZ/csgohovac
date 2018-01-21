@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
 
 export default class ProfileComponent extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {tradeLink: ''}
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange (event) {
+    this.setState({tradeLink: event.target.value})
+  }
+
   render () {
-    var { steamid, balance, wager, tradeLink } = this.props
+    var { steamid, balance, wager } = this.props
     return (
       <div>
         <h1 >
@@ -13,7 +23,9 @@ export default class ProfileComponent extends Component {
           Your balance: {balance}
           Your wager: {wager}
         </div>
-        <input type='text' value={tradeLink} onChange={() => {}} placeholder='input your tradelink here' /> <button>Save</button>
+        <p>current link: {this.props.tradeLink || 'Not added yet'}</p>
+        <input type='text' value={this.state.tradeLink} onChange={this.handleChange} placeholder='input your tradelink here' />
+        <button onClick={() => { this.props.submit(this.state.tradeLink) }}>Change</button>
       </div>
     )
   }

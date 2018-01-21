@@ -13,7 +13,7 @@ export function initProfile () {
       balance = profile.balance
       wager = profile.wager_balance
       tradeLink = profile.tradeLink
-      
+
       dispatch({
         type: C.INIT,
         steamid,
@@ -23,4 +23,27 @@ export function initProfile () {
       })
     })
   }
+}
+
+export function changeTradeLink (link) {
+  return function (dispatch, getState) {
+
+    if (validateLink(link)) {
+      var uid = getState().user.uid
+      firebase.database().ref('profiles/' + uid).update(
+        { tradeLink: link }
+      ).then(data => {
+        console.log(data)
+        dispatch({
+          type: C.UPDATE_LINK,
+          tradeLink: link
+        })
+        console.log('saved')
+      })
+    }
+  }
+}
+
+function validateLink (link) {
+  return true
 }
