@@ -21,13 +21,15 @@ class Navbar extends Component {
             <Link to='/profile'>
               <p> Hello! {user.displayName} </p>
             </Link>
-            <img src={user.photoURL} />
             <a href='javascript:void(0)' onClick={signOut}> Log out!</a>
           </div>
         )
       case C.ANONYMOUS:
         return (
-          <a href='http://localhost:5000/cs-gohavoc/us-central1/auth/steam'> log in via steam </a>
+          <div>
+            <div className='top_g steam_logg'><a href='http://localhost:5000/cs-gohavoc/us-central1/auth/steam' className='steam_login'><img src='assets/img/steam_logo.png' /></a></div>
+            <div className='top_g steamm hide-on-med-and-down'><a href='http://localhost:5000/cs-gohavoc/us-central1/auth/steam' className='steam_login'><img src='assets/img/steam_log.png' /></a></div>
+          </div>
         )
       case C.ERROR:
         return (
@@ -43,12 +45,38 @@ class Navbar extends Component {
     var statusTag = this.renderStatus()
 
     return (
-      <div>
-        <Link to='/'>
-          <p> Logo! </p>
-        </Link>
-        {statusTag}
-      </div>
+      <header>
+        <nav>
+          <div className='nav-wrapper'>
+            <a href='#!' className='brand-logo'><img src='assets/img/logo.png' alt='logo' /></a>
+            <a href='#' data-activates='mobile-demo' className='button-collapse'><i className='material-icons'>menu</i></a>
+            <a href='#' data-activates='slide-out' className='button-collapse'><i className='material-icons'>person</i></a>
+            <a href='#' data-activates='slide-out1' className='header-button hide-on-large-only right'><i className='material-icons'>chat</i></a>
+            <div className='row'>
+              <ul className='left hide-on-med-and-down top_menu'>
+                <li><a href='#' className=''>Crash</a></li>
+                <li><a href='#' className='active_menu'>Roulette</a></li>
+                <li><a href='#' className=''>Mines</a></li>
+                <li><a href='#' className=''>Store</a></li>
+                <li><a href='#' className=''>Jackpot</a></li>
+                <li><a href='#' className=''>Withdraw</a></li>
+              </ul>
+              {statusTag}
+              <div className='top_g sc'><a href='#' className='tiwt soc'><img src='assets/img/twit.png' /></a></div>
+              <div className='top_g sc'> <a href='#' className='facebook soc'><img src='assets/img/facebook.png' /></a></div>
+              <div className='top_g sc'><a href='#' className='insta soc'><img src='assets/img/insta.png' /></a></div>
+            </div>
+            <ul className='side-nav' id='mobile-demo'>
+              <li><a href='#' className=''>Crash</a></li>
+              <li><a href='#' className='active_left_menu'>Roulette</a></li>
+              <li><a href='#' className=''>Mines</a></li>
+              <li><a href='#' className=''>Store</a></li>
+              <li><a href='#' className=''>Jackpot</a></li>
+              <li><a href='#' className=''>Withdraw</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
     )
   }
 }

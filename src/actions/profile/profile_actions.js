@@ -27,7 +27,6 @@ export function initProfile () {
 
 export function changeTradeLink (link) {
   return function (dispatch, getState) {
-
     if (validateLink(link)) {
       var uid = getState().user.uid
       firebase.database().ref('profiles/' + uid).update(

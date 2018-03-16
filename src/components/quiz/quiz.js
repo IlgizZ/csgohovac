@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import '../../assets/quiz.css'
 
 class Quiz extends Component {
   componentDidMount () {
