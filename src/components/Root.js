@@ -6,8 +6,8 @@ import { Provider } from 'react-redux'
 
 class Root extends Component {
   render () {
-    const routes = configureRoutes()
     const { store, history } = this.props
+    const routes = configureRoutes(store)
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>

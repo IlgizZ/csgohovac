@@ -7,7 +7,6 @@ export function startListeningToAuth () {
     dispatch({type: C.AWAITING})
 
     firebase.auth().onAuthStateChanged(function (user) {
-      console.log(user)
       if (user) {
         dispatch({type: C.SIGN_IN, user})
         dispatch(push('/'))

@@ -5,8 +5,8 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class QuizContainer extends Component {
-  componentDidMount() {
-    this.props.init();
+  componentDidMount () {
+    this.props.init()
   }
   render () {
     let { currentQuestion, currentAnswers, currentAnswer, successor } = this.props.quiz
