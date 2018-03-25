@@ -11,7 +11,7 @@ class Auth extends Component {
     }
   }
 
-  componentWillMount () {
+  componentDidMount () {
     const queryString = require('query-string')
     const params = queryString.parse(this.props.location.search)
     const token = params.token

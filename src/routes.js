@@ -8,13 +8,21 @@ import Navbar from './containers/layouts/navbar.js'
 import LeftMenu from './containers/layouts/leftMenu.js'
 import Chat from './containers/layouts/chat.js'
 
-const configureRoutes = () => {
+const configureRoutes = (store) => {
+  var C = require('./constants/auth.js')
   return (
     <div>
       <Navbar />
       <LeftMenu />
       <Chat />
       <Switch>
+        <Route exact path="/profile" render={() => (
+          !loggedIn ? (
+            <Redirect to="/"/>
+          ) : (
+            <Profile/>
+          )
+        )}/>
         <Route exact path='/' component={Roulette} />
         <Route exact path='/auth' component={Auth} />
         <Route exact path='/developer_test' component={QuizContainer} />
