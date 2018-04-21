@@ -5,17 +5,11 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { push } from 'react-router-redux'
-
-let AUTH = require('../../constants/auth.js')
-let PROFILE = require('../../constants/profile.js')
+import * as AUTH from '../../constants/auth.js'
+import * as PROFILE from '../../constants/profile.js'
 
 class ProfileContainer extends Component {
-  constructor (props) {
-    super(props)
-    this.checkUserState = this.checkUserState.bind(this)
-  }
-
-  checkUserState () {
+  checkUserState = () => {
     if (this.props.profile.status === PROFILE.LOADED)
       return
     switch (this.props.user.status) {

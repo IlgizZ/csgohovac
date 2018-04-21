@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 
 export default class ProfileComponent extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {tradeLink: ''}
-    this.handleChange = this.handleChange.bind(this)
-  }
 
-  handleChange (event) {
+  handleChange =  (event) => {
     this.setState({tradeLink: event.target.value})
   }
 
@@ -102,9 +97,6 @@ export default class ProfileComponent extends Component {
                 <div className='roll yell-red'>1</div>
                 <div className='roll yell-red'>1</div>
                 <div className='roll zero'>1</div>
-
-
-
                 <div className='clr'></div>
             </div>
             <div className='row' style={{borderBottom: '1px solid #47484b', marginTop: '45px'}} />
