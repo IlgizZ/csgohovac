@@ -17,12 +17,7 @@ class Navbar extends Component {
     switch (user.status) {
       case C.SIGNED_IN:
         return (
-          <div>
-            <Link to='/profile'>
-              <p> Hello! {user.displayName} </p>
-            </Link>
-            <a href='javascript:void(0)' onClick={signOut}> Log out!</a>
-          </div>
+          null
         )
       case C.ANONYMOUS:
         return (
