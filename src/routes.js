@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Roulette from './containers/roulette/roulette_container'
-import QuizContainer from './containers/quiz/quiz_container'
 import ProfileContainer from './containers/profile/profile_container'
 import Auth from './components/auth/auth'
 import Navbar from './containers/layouts/navbar.js'
@@ -25,7 +24,6 @@ const configureRoutes = (store) => {
         )}/>
         <Route exact path='/' component={Roulette} />
         <Route exact path='/auth' component={Auth} />
-        <Route exact path='/developer_test' component={QuizContainer} />
         <Route exact path='/profile' component={ProfileContainer} />
       </Switch>
     </div>
